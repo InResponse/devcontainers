@@ -1,36 +1,23 @@
 {
-    "name": "Pipx package",
-    "id": "pipx-package",
-    "version": "1.1.3",
-    "description": "Installs a pipx package.",
-    "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/pipx-package",
+    "name": "Pipx multi-package installer",
+    "id": "pipx-multi",
+    "version": "0.0.1,
+    "description": "Installs multiple package/injection virtual environments via pipx.",
+    "documentationURL": "https://github.com/InResponse/devcontainers/edit/main/features/pipx-multi",
     "installsAfter": [
         "ghcr.io/devcontainers/features/python:latest"
     ],
     "options": {
-        "package": {
+        "packages": {
             "type": "string",
             "proposals": [
-                "black"
+                "ansible-core"
+                ,"ansible-core,argcomplete"
+                ,"ansible-core,argcomplete;argcomplete"
+                ,"ansible-core,argcomplete;argcomplete:latest"
             ],
             "default": "",
-            "description": "Select the pipx package to install."
-        },
-        "version": {
-            "type": "string",
-            "proposals": [
-                "latest"
-            ],
-            "default": "latest",
-            "description": "Select the version of the pipx package to install."
-        },
-        "injections": {
-            "type": "string",
-            "proposals": [
-                "pylint pytest"
-            ],
-            "default": "",
-            "description": "Space delimitered list of python packages to inject into the main package env"
+            "description": "Installation list: virtenv[;virtenv]*. virtenv: package[,injection]*. package: packagespec. injection: packagespec. packagespec: PACKAGENAME[:PACKAGEVERSION]."
         }
     }
 }
