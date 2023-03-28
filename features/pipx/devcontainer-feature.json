@@ -1,7 +1,7 @@
 {
     "name": "Pipx multi-package installer",
     "id": "pipx-multi",
-    "version": "0.0.1,
+    "version": "0.0.1",
     "description": "Installs multiple package/injection virtual environments via pipx.",
     "documentationURL": "https://github.com/InResponse/devcontainers/edit/main/features/pipx-multi",
     "installsAfter": [
